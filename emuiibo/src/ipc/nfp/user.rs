@@ -4,7 +4,6 @@ use nx::mem;
 use nx::ipc::sf;
 use nx::ipc::server;
 use nx::ipc::sf::applet;
-use nx::ipc::sf::ncm;
 use nx::ipc::sf::nfp;
 use nx::ipc::sf::nfp::IUser;
 use nx::ipc::sf::nfp::IUserManager;
@@ -19,7 +18,7 @@ pub struct User {
 }
 
 impl User {
-    pub fn new(application_id: ncm::ProgramId) -> Result<Self> {
+    pub fn new(application_id: u64) -> Result<Self> {
         emu::register_intercepted_application_id(application_id);
         
         Ok(Self {

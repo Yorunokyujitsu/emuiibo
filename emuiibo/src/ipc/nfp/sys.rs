@@ -1,5 +1,4 @@
 use nx::ipc::sf::hid;
-use nx::ipc::sf::ncm;
 use nx::result::*;
 use nx::mem;
 use nx::ipc::sf;
@@ -19,7 +18,7 @@ pub struct System {
 }
 
 impl System {
-    pub fn new(application_id: ncm::ProgramId) -> Result<Self> {
+    pub fn new(application_id: u64) -> Result<Self> {
         Ok(Self {
             handler: EmulationHandler::new(application_id)?,
             dummy_session: sf::Session::new()
