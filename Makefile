@@ -31,8 +31,9 @@ dist: sysmodule overlay
 	@cp $(CURDIR)/emuiibo/toolbox.json $(CURDIR)/SdOut/atmosphere/contents/$(PROGRAM_ID)/toolbox.json
 	@mkdir -p $(CURDIR)/SdOut/switch/.overlays
 	@cp $(CURDIR)/overlay/emuiibo.ovl $(CURDIR)/SdOut/switch/.overlays/emuiibo.ovl
-	@mkdir -p $(CURDIR)/SdOut/emuiibo/overlay
-	@cp -r $(CURDIR)/overlay/lang $(CURDIR)/SdOut/emuiibo/overlay/
+	@mkdir -p $(CURDIR)/SdOut/emuiibo/overlay/lang
+	@cp -r $(CURDIR)/overlay/lang/en.json $(CURDIR)/SdOut/emuiibo/overlay/lang/en.json
+	@cp -r $(CURDIR)/overlay/lang/ko.json $(CURDIR)/SdOut/emuiibo/overlay/lang/ko.json
 
 dist-dev: sysmodule-dev overlay
 	@rm -rf $(CURDIR)/SdOut
@@ -42,8 +43,9 @@ dist-dev: sysmodule-dev overlay
 	@cp $(CURDIR)/emuiibo/toolbox.json $(CURDIR)/SdOut/atmosphere/contents/$(PROGRAM_ID)/toolbox.json
 	@mkdir -p $(CURDIR)/SdOut/switch/.overlays
 	@cp $(CURDIR)/overlay/emuiibo.ovl $(CURDIR)/SdOut/switch/.overlays/emuiibo.ovl
-	@mkdir -p $(CURDIR)/SdOut/emuiibo/overlay
-	@cp -r $(CURDIR)/overlay/lang $(CURDIR)/SdOut/emuiibo/overlay/
+	@mkdir -p $(CURDIR)/SdOut/emuiibo/overlay/lang
+	@cp -r $(CURDIR)/overlay/lang/en.json $(CURDIR)/SdOut/emuiibo/overlay/lang/en.json
+	@cp -r $(CURDIR)/overlay/lang/ko.json $(CURDIR)/SdOut/emuiibo/overlay/lang/ko.json
 
 emuiigen:
 	@cd emuiigen && mvn package

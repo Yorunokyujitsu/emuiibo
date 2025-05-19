@@ -99,7 +99,7 @@ namespace {
             return "EmuiiboNotPresent"_tr;
         }
         else {
-            return std::to_string(g_Version.major) + "." + std::to_string(g_Version.minor) + "." + std::to_string(g_Version.micro) + " (" + (g_Version.dev_build ? "dev" : "release") + ")"; 
+            return std::to_string(g_Version.major) + "." + std::to_string(g_Version.minor) + "." + std::to_string(g_Version.micro) + " (" + (g_Version.dev_build ? "dev" : "release") + ")-ASAP"; 
         }
     }
 
@@ -480,7 +480,7 @@ class AmiiboGui : public tsl::Gui {
 
         virtual tsl::elm::Element *createUI() override {
             // View frame with 2 sections
-            this->root_frame = new ui::elm::DoubleSectionOverlayFrame("emuiibo", MakeVersionString(), ui::SectionsLayout::same, true);
+            this->root_frame = new ui::elm::DoubleSectionOverlayFrame("아미보 에뮬레이터", MakeVersionString(), ui::SectionsLayout::same, true);
 
             // Top and bottom containers
             this->top_list = new tsl::elm::List();
