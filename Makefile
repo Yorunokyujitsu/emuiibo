@@ -1,5 +1,4 @@
-
-#.PHONY: all dev emuiibo emuiibo-dev sysmodule sysmodule-dev overlay emuiigen dist clean emuiibo-clean emuiigen-clean
+.PHONY: all dev emuiibo emuiibo-dev sysmodule sysmodule-dev overlay emuiigen dist clean emuiibo-clean emuiigen-clean
 
 TARGET_TRIPLE := aarch64-nintendo-switch-freestanding
 PROGRAM_ID := 0100000000000352
@@ -15,7 +14,7 @@ emuiibo: sysmodule overlay dist
 emuiibo-dev: sysmodule-dev overlay dist-dev
 
 sysmodule:
-	@cd emuiibo && cargo update && cargo nx build --release
+	@cd emuiibo && cargo nx build --release
 
 sysmodule-dev:
 	@cd emuiibo && cargo update && cargo nx build
