@@ -2,167 +2,167 @@
     "strings": [
         {
             "key": "UpngInvalidFile",
-            "value": "Ungültige Datei"
+            "value": "無効なファイル"
         },
         {
             "key": "UpngUnsupportedRgbPng",
-            "value": "Bitte verwenden Sie RGBA PNG."
+            "value": "RGB形式のPNGはサポートされていません"
         },
         {
             "key": "UpngUpscaleUnsupported",
-            "value": "Upscale nicht erlaubt."
+            "value": "アップスケーリングは許可されていません"
         },
         {
             "key": "UpngImageTooLarge",
-            "value": "Bild ist zu groß."
+            "value": "画像が大きすぎます"
         },
         {
             "key": "UpngImageNotFound",
-            "value": "Bild nicht gefunden."
+            "value": "画像が見つかりません"
         },
         {
             "key": "UpngNotPngImage",
-            "value": "Bild ist kein PNG."
+            "value": "画像はPNGではありません"
         },
         {
             "key": "UpngMalformedPng",
-            "value": "PNG fehlerhaft."
+            "value": "PNG形式が不正です"
         },
         {
             "key": "UpngUnsupportedPng",
-            "value": "Dieses PNG wird nicht unterstützt."
+            "value": "このPNGはサポートされていません"
         },
         {
             "key": "UpngUnsupportedInterlacing",
-            "value": "Bild Interlacing wird nicht unterstützt."
+            "value": "画像のインターレースはサポートされていません"
         },
         {
             "key": "UpngUnsupportedColorFormat",
-            "value": "Das Bildfarbformat wird nicht unterstützt."
+            "value": "画像のカラーフォーマットはサポートされていません"
         },
         {
             "key": "UpngInvalidParameter",
-            "value": "Ungültiger Parameter."
+            "value": "無効なパラメータです"
         },
         {
             "key": "EmuiiboNotPresent",
-            "value": "emuiibo nicht gefunden."
+            "value": "emuiiboが見つかりません"
         },
         {
             "key": "EmuiiboServiceError",
-            "value": "Beim Zugriff auf emuiibo ist ein Fehler aufgetreten:"
+            "value": "emuiiboの接続中にエラーが発生しました:"
         },
         {
             "key": "OtherServiceError",
-            "value": "Beim Zugriff auf die Dienste ist ein Fehler aufgetreten:"
+            "value": "サービスの接続中にエラーが発生しました:"
         },
         {
             "key": "Help",
-            "value": "Hilfe"
+            "value": "ヘルプ"
         },
         {
             "key": "EnableEmulation",
-            "value": "Emulation aktivieren"
+            "value": "エミュレーションを有効化"
         },
         {
             "key": "DisableEmulation",
-            "value": "Emulation deaktivieren"
+            "value": "エミュレーションを無効化"
         },
         {
             "key": "ToogleConnectVirtualAmiibo",
-            "value": "Virtuelles Amiibo verbinden/trennen"
+            "value": "仮想amiiboを接続/切断"
         },
         {
             "key": "SelectFolderVirtualAmiibo",
-            "value": "Ordner/virtuelles Amiibo auswählen"
+            "value": "フォルダ/仮想amiiboを選択"
         },
         {
             "key": "AddFavorite",
-            "value": "Zu Favoriten hinzufügen"
+            "value": "お気に入りに追加"
         },
         {
             "key": "RemoveFavorite",
-            "value": "Aus Favoriten entfernen"
+            "value": "お気に入りから削除"
         },
         {
             "key": "ResetActiveVirtualAmiibo",
-            "value": "Aktives virtuelles Amiibo zurücksetzen"
+            "value": "有効な仮想amiiboをリセット"
         },
         {
             "key": "EmulationStatus",
-            "value": "Emulationsstatus"
+            "value": "エミュレーション状態"
         },
         {
             "key": "On",
-            "value": "an"
+            "value": "オン"
         },
         {
             "key": "Off",
-            "value": "aus"
+            "value": "オフ"
         },
         {
             "key": "CurrentGameIntercepted",
-            "value": "Aktuelles Spiel ist"
+            "value": "現在のゲームは"
         },
         {
             "key": "AvailableVirtualAmiibos",
-            "value": "Verfügbare Amiibos in"
+            "value": "使用可能なamiibo"
         },
         {
             "key": "Intercepted",
-            "value": "abgefangen"
+            "value": "有効"
         },
         {
             "key": "NotIntercepted",
-            "value": "nicht abgefangen"
+            "value": "無効"
         },
         {
             "key": "NoActiveVirtualAmiibo",
-            "value": "Kein aktives virtuelles Amiibo"
+            "value": "有効な仮想amiiboがありません"
         },
         {
             "key": "Connected",
-            "value": "verbunden"
+            "value": "接続済み"
         },
         {
             "key": "Disconnected",
-            "value": "getrennt"
+            "value": "切断済み"
         },
         {
             "key": "ViewVirtualAmiibos",
-            "value": "Virtuelles amiibos anzeigen"
+            "value": "仮想amiiboを表示"
         },
         {
             "key": "ViewFavorites",
-            "value": "Favoriten anzeigen"
+            "value": "お気に入りを表示"
         },
         {
             "key": "SelectedArea",
-            "value": "Ausgewählter Bereich"
+            "value": "選択されたエリア"
         },
         {
             "key": "NoVirtualAmiiboAreas",
-            "value": "Das Amiibo hat keine Bereiche."
+            "value": "この仮想amiiboにはエリアがありません"
         },
         {
             "key": "EnableRandomUuid",
-            "value": "Zufällige UUID aktivieren"
+            "value": "ランダムUUIDを有効化"
         },
         {
             "key": "DisableRandomUuid",
-            "value": "Zufällige UUID deaktivieren"
+            "value": "ランダムUUIDを無効化"
         },
         {
             "key": "RandomUuid",
-            "value": "Zufällige UUID"
+            "value": "ランダムUUID"
         },
         {
             "key": "Back",
-            "value": "Zurück"
+            "value": "戻る"
         },
         {
             "key": "OK",
-            "value": "OK"
+            "value": "確認"
         }
     ]
 }
