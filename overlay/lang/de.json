@@ -50,11 +50,11 @@
         },
         {
             "key": "EmuiiboServiceError",
-            "value": "An error ocurred accessing emuiibo:"
+            "value": "Beim Zugriff auf emuiibo ist ein Fehler aufgetreten:"
         },
         {
             "key": "OtherServiceError",
-            "value": "An error ocurred accessing services:"
+            "value": "Beim Zugriff auf Dienste ist ein Fehler aufgetreten:"
         },
         {
             "key": "Help",
