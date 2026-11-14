@@ -1,63 +1,83 @@
 name: Build emuiibo
 
 on:
-  push:
-    paths:
-      - 'emuiibo/**'
-      - 'overlay/**'
-      - 'libultrahand'
-      - 'Makefile'
-      - '.github/workflows/emuiibo.yml'
   workflow_dispatch:
 
 jobs:
   emuiibo:
     runs-on: ubuntu-latest
     container: devkitpro/devkita64:latest
+    permissions:
+      contents: write
     env:
-      # Overrides the repo's rust-toolchain.toml (plain "nightly") so the pinned toolchain below is used
+      # Override the repository's rust-toolchain.toml (nightly)
       RUSTUP_TOOLCHAIN: nightly-2026-06-28
 
     steps:
-    # The container runs as root; git must be present before checkout so that submodules are cloned
-    - name: Install packages
-      run: |
-        apt-get update
-        apt-get install -y --no-install-recommends git build-essential curl ca-certificates zip
+      # Git must be installed before checkout to fetch submodules
+      - name: Install packages
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends git build-essential curl ca-certificates zip
 
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: recursive
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
-    # Pinned to the nightly the sysmodule is known to build with (build-std breaks on some nightlies)
-    - name: Prepare Rust
-      uses: dtolnay/rust-toolchain@master
-      with:
-        toolchain: nightly-2026-06-28
-        components: rust-src
+      - name: Mark repo as safe
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-    - name: Prepare cargo-nx
-      run: cargo install cargo-nx --git https://github.com/aarch64-switch-rs/cargo-nx
+      - name: Prepare Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: nightly-2026-06-28
+          components: rust-src
 
-    # Built directly rather than via 'make emuiibo', which runs 'cargo update' and would ignore the committed Cargo.lock
-    # cargo-nx does not report build failures in its exit code, so check for the output
-    - name: Build sysmodule
-      run: |
-        cd emuiibo
-        cargo nx build --release
-        test -f target/aarch64-nintendo-switch-freestanding/release/emuiibo.nsp
+      - name: Prepare cargo-nx
+        run: cargo install cargo-nx --git https://github.com/aarch64-switch-rs/cargo-nx
 
-    - name: Build overlay
-      run: make -C overlay -j$(nproc)
+      # Avoid the cargo update performed by make emuiibo
+      - name: Build sysmodule
+        run: |
+          cd emuiibo
+          cargo nx build --release
+          test -f target/aarch64-nintendo-switch-freestanding/release/emuiibo.nsp
 
-    - name: Package
-      run: make dist -o sysmodule -o overlay
+      - name: Build overlay
+        run: make -C overlay -j$(nproc)
 
-    - name: Upload
-      uses: actions/upload-artifact@v4
-      with:
-        name: SdOut
-        path: SdOut
-        # The overlay lives in switch/.overlays, which upload-artifact@v4 skips by default
-        include-hidden-files: true
+      - name: Package
+        run: make dist -o sysmodule -o overlay
+
+      # Make the ZIP directly extractable to the SD card root
+      - name: Pack ZIP
+        run: |
+          test -f SdOut/atmosphere/contents/0100000000000352/exefs.nsp
+          test -f SdOut/switch/.overlays/emuiibo.ovl
+          rm -f emuiibo.zip
+          cd SdOut
+          zip -r ../emuiibo.zip .
+
+      - name: Release Tag
+        id: reltag
+        run: |
+          VERSION=$(sed -n 's/^version = "\([^"]*\)"/\1/p' emuiibo/Cargo.toml | head -n 1)
+          test -n "$VERSION"
+          SHORT_SHA="$(git rev-parse --short HEAD)"
+
+          echo "tag_name=${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+          echo "rel_name=emuiibo ${VERSION} (${SHORT_SHA})" >> "$GITHUB_OUTPUT"
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ steps.reltag.outputs.tag_name }}
+          target_commitish: ${{ github.sha }}
+          name: ${{ steps.reltag.outputs.rel_name }}
+          files: emuiibo.zip
+          fail_on_unmatched_files: true
+          generate_release_notes: true
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
