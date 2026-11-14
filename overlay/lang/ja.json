@@ -1,0 +1,160 @@
+{
+    "strings": [
+        {
+            "key": "UpngInvalidFile",
+            "value": "無効なファイル"
+        },
+        {
+            "key": "UpngUnsupportedRgbPng",
+            "value": "RGB形式のPNGはサポートされていません"
+        },
+        {
+            "key": "UpngUpscaleUnsupported",
+            "value": "アップスケーリングは許可されていません"
+        },
+        {
+            "key": "UpngImageTooLarge",
+            "value": "画像が大きすぎます"
+        },
+        {
+            "key": "UpngImageNotFound",
+            "value": "画像が見つかりません"
+        },
+        {
+            "key": "UpngNotPngImage",
+            "value": "画像はPNGではありません"
+        },
+        {
+            "key": "UpngMalformedPng",
+            "value": "PNG形式が不正です"
+        },
+        {
+            "key": "UpngUnsupportedPng",
+            "value": "このPNGはサポートされていません"
+        },
+        {
+            "key": "UpngUnsupportedInterlacing",
+            "value": "画像のインターレースはサポートされていません"
+        },
+        {
+            "key": "UpngUnsupportedColorFormat",
+            "value": "画像のカラーフォーマットはサポートされていません"
+        },
+        {
+            "key": "UpngInvalidParameter",
+            "value": "無効なパラメータです"
+        },
+        {
+            "key": "EmuiiboNotPresent",
+            "value": "emuiiboが見つかりません"
+        },
+        {
+            "key": "EmuiiboServiceError",
+            "value": "emuiiboの接続中にエラーが発生しました:"
+        },
+        {
+            "key": "OtherServiceError",
+            "value": "サービスの接続中にエラーが発生しました:"
+        },
+        {
+            "key": "Help",
+            "value": "ヘルプ"
+        },
+        {
+            "key": "EnableEmulation",
+            "value": "エミュレーションを有効化"
+        },
+        {
+            "key": "DisableEmulation",
+            "value": "エミュレーションを無効化"
+        },
+        {
+            "key": "ToogleConnectVirtualAmiibo",
+            "value": "仮想amiiboを接続/切断"
+        },
+        {
+            "key": "SelectFolderVirtualAmiibo",
+            "value": "フォルダ/仮想amiiboを選択"
+        },
+        {
+            "key": "AddFavorite",
+            "value": "お気に入りに追加"
+        },
+        {
+            "key": "RemoveFavorite",
+            "value": "お気に入りから削除"
+        },
+        {
+            "key": "ResetActiveVirtualAmiibo",
+            "value": "有効な仮想amiiboをリセット"
+        },
+        {
+            "key": "EmulationStatus",
+            "value": "エミュレーション状態"
+        },
+        {
+            "key": "On",
+            "value": "オン"
+        },
+        {
+            "key": "Off",
+            "value": "オフ"
+        },
+        {
+            "key": "CurrentGameIntercepted",
+            "value": "現在のゲームは"
+        },
+        {
+            "key": "AvailableVirtualAmiibos",
+            "value": "使用可能なamiibo"
+        },
+        {
+            "key": "Intercepted",
+            "value": "有効"
+        },
+        {
+            "key": "NotIntercepted",
+            "value": "無効"
+        },
+        {
+            "key": "NoActiveVirtualAmiibo",
+            "value": "有効な仮想amiiboがありません"
+        },
+        {
+            "key": "Connected",
+            "value": "接続済み"
+        },
+        {
+            "key": "Disconnected",
+            "value": "切断済み"
+        },
+        {
+            "key": "ViewVirtualAmiibos",
+            "value": "仮想amiiboを表示"
+        },
+        {
+            "key": "ViewFavorites",
+            "value": "お気に入りを表示"
+        },
+        {
+            "key": "SelectedArea",
+            "value": "選択されたエリア"
+        },
+        {
+            "key": "NoVirtualAmiiboAreas",
+            "value": "この仮想amiiboにはエリアがありません"
+        },
+        {
+            "key": "EnableRandomUuid",
+            "value": "ランダムUUIDを有効化"
+        },
+        {
+            "key": "DisableRandomUuid",
+            "value": "ランダムUUIDを無効化"
+        },
+        {
+            "key": "RandomUuid",
+            "value": "ランダムUUID"
+        }
+    ]
+}
